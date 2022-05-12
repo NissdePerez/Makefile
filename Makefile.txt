@@ -1,0 +1,23 @@
+#Makefile
+# Nombre: Perez Huitron Karla Denisse
+# Numero de control: 17210619
+# Autor : NissdePerez
+
+all: assemble https://github.com/NissdePerez/Makefile
+
+assemble: practica.s
+        as -o exec.o practica.s
+
+link: exec.o
+        ld -o exec exec.o
+
+# Desensamblado de practica.c a practica.s
+
+dissasemble_c: practica.s
+        gcc -S practica.s
+
+dissasemble_cpp: practica.cpp
+        g++ -S practica.cpp
+
+clean:
+        rm -f exec.o exec
